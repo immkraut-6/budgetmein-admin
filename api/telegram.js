@@ -4,7 +4,8 @@
 const TG_CHAT_IDS = {
   order:    process.env.TG_CHAT_ORDER,
   feedback: process.env.TG_CHAT_FEEDBACK,
-  customer: process.env.TG_CHAT_CUSTOMER
+  customer: process.env.TG_CHAT_CUSTOMER,
+  delivery: process.env.TG_CHAT_DELIVERY
 };
 
 export default async function handler(req, res) {
