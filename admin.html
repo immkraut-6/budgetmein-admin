@@ -28,15 +28,13 @@ const db    = getFirestore(fbApp);
 const auth  = getAuth(fbApp);
 const provider = new GoogleAuthProvider();
 
-// ── Telegram (same as before) ──
-const TG     = "8601047628:AAFEajOzNt53lFCaTdEfPJjud9bB-SQp-UI";
-const TG_ORD = "-5158992691";
+// SECURE: Token is in Vercel Environment Variables — not here
 async function tgMsg(text){
   try{
-    await fetch("https://api.telegram.org/bot"+TG+"/sendMessage",{
+    await fetch("/api/telegram-admin",{
       method:"POST",
       headers:{"Content-Type":"application/json"},
-      body:JSON.stringify({chat_id:TG_ORD,parse_mode:"HTML",text:text})
+      body:JSON.stringify({text:text})
     });
   }catch(e){}
 }
